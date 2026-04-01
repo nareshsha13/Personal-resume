@@ -4,228 +4,311 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naresh Sha J R | Strategic Finance Leader</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0a192f; 
-            --bg-body: #0d1b33; /* Lightened from near-black to Corporate Blue */
-            --accent: #d4af37;  
+            --primary: #0d1b33; /* Corporate Midnight Blue */
+            --accent: #d4af37;  /* Executive Gold */
             --glass: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.12);
             --text-main: #f1f5f9;
             --text-dim: #94a3b8;
+            --card-bg: rgba(255, 255, 255, 0.03);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, sans-serif; scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         
         body { 
-            background-color: var(--bg-body); 
+            background-color: var(--primary); 
             color: var(--text-main); 
-            line-height: 1.7; 
+            line-height: 1.6; 
             overflow-x: hidden;
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-
-        /* --- Graphics --- */
+        /* --- Background Decoration --- */
         .bg-glow {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: 
-                radial-gradient(circle at 80% 20%, rgba(30, 58, 138, 0.2) 0%, transparent 40%),
-                radial-gradient(circle at 10% 90%, rgba(30, 58, 138, 0.15) 0%, transparent 40%);
+            background: radial-gradient(circle at 50% 0%, rgba(30, 58, 138, 0.3) 0%, transparent 70%);
             z-index: -1;
-            filter: blur(80px);
         }
 
-        /* --- Section Spacing (Tightened) --- */
-        section { padding: 40px 0; } /* Reduced from 100px */
-        .hero { padding: 60px 0 40px 0; }
-
-        .section-tag { color: var(--accent); text-transform: uppercase; letter-spacing: 5px; font-size: 0.85rem; font-weight: 800; display: block; margin-bottom: 10px; }
-        .section-title { font-size: 2.5rem; margin-bottom: 30px; color: #fff; font-weight: 800; }
-
-        /* --- Hero Section --- */
-        .hero-grid { display: grid; grid-template-columns: 1fr 380px; gap: 60px; align-items: center; }
-        .profile-img {
-            width: 100%;
-            border-radius: 32px;
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.8);
+        /* --- Sticky Navigation (Reference Style) --- */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(13, 27, 51, 0.8);
             backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid var(--glass-border);
+            padding: 15px 0;
         }
-        .hero h1 { font-size: 3.8rem; font-weight: 900; letter-spacing: -3px; margin-bottom: 15px; color: #fff; line-height: 1; }
-        .hero h1 span { color: var(--accent); }
-        .hero p { font-size: 1.2rem; color: var(--text-dim); margin-bottom: 30px; max-width: 600px; }
+        .nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        .nav-container a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        .nav-container a:hover { color: var(--accent); }
 
-        /* --- Accolades --- */
-        .spotlight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 30px; }
-        .spotlight-card {
-            background: linear-gradient(145deg, rgba(212, 175, 55, 0.08) 0%, rgba(5, 25, 55, 0.4) 100%);
-            border: 1px solid var(--accent);
-            padding: 35px 20px;
-            border-radius: 24px;
+        /* --- Main Content Wrap --- */
+        .main-wrapper {
+            max-width: 850px; /* Centered content like reference */
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* --- Profile Header --- */
+        .profile-header {
             text-align: center;
-            backdrop-filter: blur(20px);
+            margin-bottom: 50px;
         }
-        .spotlight-card h4 { font-size: 1.3rem; font-weight: 800; color: #fff; }
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .profile-header h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 5px; }
+        .profile-header p { color: var(--accent); font-weight: 600; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; }
 
-        .kpi-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        /* --- Section Styling --- */
+        section { margin-bottom: 60px; }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
             gap: 15px;
-            margin-bottom: 40px;
         }
-        .kpi-card { background: var(--glass); border: 1px solid var(--glass-border); padding: 25px 10px; border-radius: 18px; text-align: center; }
-        .kpi-card h3 { font-size: 2rem; color: var(--accent); margin-bottom: 5px; }
-        .kpi-card p { font-size: 0.7rem; text-transform: uppercase; color: var(--text-dim); font-weight: 700; }
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--glass-border);
+        }
 
-        /* --- Glass Content Blocks --- */
-        .glass-box { background: var(--glass); border: 1px solid var(--glass-border); padding: 40px; border-radius: 28px; backdrop-filter: blur(15px); }
+        /* --- Content Cards (Reference Layout) --- */
+        .content-card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+        .content-card:hover { border-color: var(--accent); background: rgba(255,255,255,0.05); }
 
-        .achievements-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
-        .achieve-card { background: rgba(255, 255, 255, 0.02); border-top: 4px solid var(--accent); padding: 30px; border-radius: 16px; }
-        .achieve-card h4 { color: #fff; margin-bottom: 12px; font-size: 1.15rem; }
-        .achieve-card p { font-size: 0.9rem; color: var(--text-dim); }
+        /* --- Award Spotlights --- */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .award-mini-card {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--accent);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
 
-        /* --- Role Journey --- */
-        .role-box { background: var(--glass); border: 1px solid var(--glass-border); padding: 35px; border-radius: 24px; margin-bottom: 20px; }
-        .role-header { display: flex; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px solid var(--glass-border); padding-bottom: 15px; }
-        .role-title { font-size: 1.4rem; font-weight: 800; color: #fff; }
-        .role-date { color: var(--accent); font-weight: 700; font-size: 0.95rem; }
-        .role-list { list-style: none; }
-        .role-list li { position: relative; padding-left: 25px; margin-bottom: 10px; color: var(--text-dim); font-size: 1rem; }
-        .role-list li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+        /* --- KPIs --- */
+        .kpi-row {
+            display: flex;
+            justify-content: space-between;
+            background: var(--glass);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .kpi-item h3 { color: var(--accent); font-size: 1.5rem; }
+        .kpi-item p { font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; font-weight: 700; }
 
-        /* --- Footer & Contact --- */
-        footer { text-align: center; padding: 80px 0; border-top: 1px solid var(--glass-border); }
-        .cta-btn { background: #fff; color: #000; padding: 18px 45px; border-radius: 100px; text-decoration: none; font-weight: 800; transition: 0.3s; display: inline-block; }
+        /* --- Experience --- */
+        .exp-item { margin-bottom: 30px; }
+        .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+        .exp-title { font-weight: 700; font-size: 1.1rem; color: #fff; }
+        .exp-date { font-size: 0.85rem; color: var(--accent); font-weight: 600; }
+        .exp-company { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 10px; display: block; }
+        .exp-list { list-style: none; padding-left: 15px; }
+        .exp-list li { position: relative; font-size: 0.95rem; color: var(--text-dim); margin-bottom: 8px; }
+        .exp-list li::before { content: "•"; position: absolute; left: -15px; color: var(--accent); }
 
-        @media (max-width: 968px) {
-            .hero-grid, .spotlight-grid, .achievements-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 3rem; }
-            .hero { text-align: center; }
-            .profile-wrapper { max-width: 280px; margin: 0 auto; }
+        /* --- Interests --- */
+        .interests-flex {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+        .interest-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid var(--glass-border);
+        }
+        .contact-btn {
+            background: var(--accent);
+            color: #000;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .contact-btn:hover { background: #fff; transform: translateY(-2px); }
+
+        @media (max-width: 600px) {
+            .nav-container { gap: 10px; font-size: 0.7rem; }
+            .awards-grid { grid-template-columns: 1fr; }
+            .exp-header { flex-direction: column; }
         }
     </style>
 </head>
 <body>
     <div class="bg-glow"></div>
-    <div class="container">
 
-        <header class="hero">
-            <div class="hero-grid">
-                <div>
-                    <span class="section-tag">Finance Business Partner</span>
-                    <h1>Naresh Sha<br><span>J R</span></h1>
-                    <p>CMA & MBA | Aligning finance with business strategy to drive operational excellence across Automobile and HVAC industries for 11+ years.</p>
-                    <a href="mailto:Nareshsha13@gmail.com" class="cta-btn">Initiate Partnership</a>
-                </div>
-                <div class="profile-wrapper">
-                    <img src="https://i.ibb.co/L6v3YfW/Naresh-professional-pic-compressed.jpg" alt="Naresh Sha J R" class="profile-img">
-                </div>
-            </div>
+    <nav>
+        <div class="nav-container">
+            <a href="#about">About</a>
+            <a href="#awards">Awards</a>
+            <a href="#experience">Experience</a>
+            <a href="#impact">Impact</a>
+            <a href="#interests">Life</a>
+        </div>
+    </nav>
+
+    <div class="main-wrapper">
+        <header class="profile-header">
+            <img src="https://i.ibb.co/L6v3YfW/Naresh-professional-pic-compressed.jpg" alt="Naresh Sha J R" class="profile-img">
+            <h1>Naresh Sha J R</h1>
+            <p>Finance Business Partner | CMA | MBA</p>
         </header>
 
-        <section>
-            <span class="section-tag">Recognition Portfolio</span>
+        <section id="about">
+            <h2 class="section-title">Professional Profile</h2>
+            <div class="content-card">
+                <p style="color: var(--text-dim); text-align: justify;">
+                    A Finance Business Partner working in a shared service setup for over a decade, I leverage my <strong>CMA and MBA</strong> qualifications to align finance with business strategy and drive operational excellence. I bring experience from the Automobile and HVAC industries, where I have developed strong expertise in financial planning and operational support. I have also served as a people manager, leading teams with a focus on collaboration, accountability, and professional growth.
+                </p>
+            </div>
+        </section>
+
+        <section id="awards">
             <h2 class="section-title">Global Accolades</h2>
-            <div class="spotlight-grid">
-                <div class="spotlight-card"><h4>Annual Individual Excellence Award</h4></div>
-                <div class="spotlight-card"><h4>Most Valuable Player Award</h4></div>
+            <div class="awards-grid">
+                <div class="award-mini-card">Annual Individual Excellence Award</div>
+                <div class="award-mini-card">Most Valuable Player Award</div>
             </div>
-            <div class="kpi-container">
-                <div class="kpi-card"><h3>20</h3><p>Total Awards</p></div>
-                <div class="kpi-card"><h3>2</h3><p>Diamond</p></div>
-                <div class="kpi-card"><h3>1</h3><p>Platinum</p></div>
-                <div class="kpi-card"><h3>6</h3><p>Gold</p></div>
-                <div class="kpi-card"><h3>7</h3><p>Silver</p></div>
-                <div class="kpi-card"><h3>3</h3><p>Bronze</p></div>
-            </div>
-        </section>
-
-        <section>
-            <span class="section-tag">The Profile</span>
-            <h2 class="section-title">About Me</h2>
-            <div class="glass-box" style="font-size: 1.1rem; color: var(--text-dim); line-height: 1.9; text-align: justify;">
-                A Finance Business Partner working in a shared service setup for over a decade, I leverage my <strong>CMA and MBA</strong> qualifications to align finance with business strategy and drive operational excellence. I bring experience from the Automobile and HVAC industries, where I have developed strong expertise in financial planning and operational support. I have also served as a people manager, leading teams with a focus on collaboration, accountability, and professional growth. My expertise spans financial planning & analysis, sales rebate management, annual planning, cost optimization initiatives, process improvement and automation. A key strength I bring is stakeholder management, building trust through transparent communication and consistent delivery.
+            <div class="kpi-row">
+                <div class="kpi-item"><h3>20</h3><p>Total</p></div>
+                <div class="kpi-item"><h3>2</h3><p>Diamond</p></div>
+                <div class="kpi-item"><h3>1</h3><p>Platinum</p></div>
+                <div class="kpi-item"><h3>6</h3><p>Gold</p></div>
+                <div class="kpi-item"><h3>7</h3><p>Silver</p></div>
+                <div class="kpi-item"><h3>3</h3><p>Bronze</p></div>
             </div>
         </section>
 
-        <section>
-            <span class="section-tag">Strategic Milestones</span>
-            <h2 class="section-title">Key Impact</h2>
-            <div class="achievements-grid">
-                <div class="achieve-card">
-                    <h4>Global COE Transition</h4>
-                    <p>Successful Transition of Sales Rebate management process from US to Chennai Center of excellence team. Received <strong>Diamond award (2025)</strong> from VP Finance (Residential).</p>
-                </div>
-                <div class="achieve-card">
-                    <h4>Process Efficiency</h4>
-                    <p>Optimized journal entry postings resulting in fast month-close. Received <strong>"Most Valuable Player"</strong> (2022) — first resource from US FP&A residential team to be recognized.</p>
-                </div>
-                <div class="achieve-card">
-                    <h4>Operational Automation</h4>
-                    <p>Automated Quality Audit Process saving <strong>700+ hours annually</strong>. Achieved Lean White Belt certification and received the "Annual Individual Excellence award" (2021).</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <span class="section-tag">Career Trajectory</span>
+        <section id="experience">
             <h2 class="section-title">Professional Journey</h2>
             
-            <div class="role-box">
-                <div class="role-header">
-                    <div class="role-title">Lead Analyst – FP&A <br><small style="color: var(--text-dim);">Lennox India Technology Center</small></div>
-                    <span class="role-date">Sep 2025 – April 2026</span>
+            <div class="content-card">
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Lead Analyst – FP&A</span>
+                        <span class="exp-date">Sep 2025 – Apr 2026</span>
+                    </div>
+                    <span class="exp-company">Lennox India Technology Center</span>
+                    <ul class="exp-list">
+                        <li>Part of Project Management Office (PMO) to support corporate initiatives.</li>
+                    </ul>
                 </div>
-                <ul class="role-list"><li>Part of Project Management Office (PMO) to support corporate initiatives.</li></ul>
-            </div>
 
-            <div class="role-box">
-                <div class="role-header">
-                    <div class="role-title">Team Manager – FP&A <br><small style="color: var(--text-dim);">Lennox India Technology Center</small></div>
-                    <span class="role-date">Apr 2024 – Aug 2025</span>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Team Manager – FP&A</span>
+                        <span class="exp-date">Apr 2024 – Aug 2025</span>
+                    </div>
+                    <span class="exp-company">Lennox India Technology Center</span>
+                    <ul class="exp-list">
+                        <li>Led FP&A operations for U.S. distribution centers including OPEX analysis, budgeting, and forecasting.</li>
+                        <li>Transitioned the U.S. Sales Rebate Management process; strengthened controls and reporting accuracy.</li>
+                        <li>Supervised team hiring, performance reviews, and capability development.</li>
+                    </ul>
                 </div>
-                <ul class="role-list">
-                    <li>Led FP&A operations for U.S. distribution centers including OPEX analysis, budgeting, and forecasting.</li>
-                    <li>Transitioned the U.S. Sales Rebate Management process; strengthened controls and reporting accuracy.</li>
-                    <li>Supervised team hiring, performance reviews, capability development, and executive reporting.</li>
-                    <li>Ensured strong stakeholder management across business segments.</li>
-                </ul>
-            </div>
 
-            <div class="role-box">
-                <div class="role-header">
-                    <div class="role-title">Controller - FP&A <br><small style="color: var(--text-dim);">Ford Motor Private Limited</small></div>
-                    <span class="role-date">Jan 2016 – Dec 2019</span>
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Controller - FP&A</span>
+                        <span class="exp-date">Jan 2016 – Dec 2019</span>
+                    </div>
+                    <span class="exp-company">Ford Motor Private Limited</span>
+                    <ul class="exp-list">
+                        <li>Owned SG&A budgeting, forecasting, and financial control processes.</li>
+                        <li>Conducted variance analysis for cost/revenue and presented insights to leadership.</li>
+                        <li>Strengthened PO compliance and spending discipline across departments.</li>
+                    </ul>
                 </div>
-                <ul class="role-list">
-                    <li>Owned SG&A budgeting, forecasting, and financial control processes.</li>
-                    <li>Conducted variance analysis for cost/revenue and presented insights to finance leaders.</li>
-                    <li>Strengthened PO compliance and spending discipline across departments.</li>
-                </ul>
             </div>
         </section>
 
-        <section>
-            <span class="section-tag">Executive Balance</span>
-            <div class="glass-box" style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; gap: 40px;">
-                <div><div style="font-size: 2.5rem; margin-bottom: 10px;">🧘</div><strong>Certified Yoga Instructor</strong></div>
-                <div><div style="font-size: 2.5rem; margin-bottom: 10px;">🎶</div><strong>Budding Flautist</strong></div>
-                <div><div style="font-size: 2.5rem; margin-bottom: 10px;">🧠</div><strong>Music Therapist</strong></div>
+        <section id="impact">
+            <h2 class="section-title">Strategic Impact</h2>
+            <div class="content-card">
+                <div class="exp-item">
+                    <p><strong>Global COE Transition:</strong> Successful Transition of Sales Rebate management process from US to Chennai. Received Diamond award (2025) from VP Finance.</p>
+                </div>
+                <div class="exp-item">
+                    <p><strong>Process Efficiency:</strong> Optimized journal entry postings for rapid month-close. Awarded Most Valuable Player in 2022 (First from Residential team).</p>
+                </div>
+                <div class="exp-item" style="margin-bottom: 0;">
+                    <p><strong>Automation:</strong> Automated Quality Audit Process saving 700+ hours per annum. Lean White Belt certified for this excellence project.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="interests">
+            <h2 class="section-title">Executive Balance</h2>
+            <div class="content-card">
+                <div class="interests-flex">
+                    <div><span class="interest-icon">🧘</span><strong>Yoga Instructor</strong></div>
+                    <div><span class="interest-icon">🎶</span><strong>Flautist</strong></div>
+                    <div><span class="interest-icon">🧠</span><strong>Music Therapist</strong></div>
+                </div>
             </div>
         </section>
 
         <footer>
-            <h2 style="margin-bottom: 30px; font-size: 2.5rem;">Let's talk strategy.</h2>
-            <a href="mailto:Nareshsha13@gmail.com" class="cta-btn">Nareshsha13@gmail.com</a>
-            <div style="margin-top: 40px;">
-                <a href="https://www.linkedin.com/in/naresh-sha-j-r-633371b3" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 700;">LinkedIn Executive Profile →</a>
+            <p style="margin-bottom: 20px; font-weight: 600;">Let's drive excellence together.</p>
+            <a href="mailto:Nareshsha13@gmail.com" class="contact-btn">Email Me</a>
+            <div style="margin-top: 30px;">
+                <a href="https://www.linkedin.com/in/naresh-sha-j-r-633371b3" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 0.8rem; font-weight: 700;">LINKEDIN PROFILE →</a>
             </div>
-            <p style="margin-top: 60px; color: var(--glass-border); font-size: 0.8rem; letter-spacing: 2px;">© 2026 NARESH SHA J R | CMA | MBA | CHENNAI, INDIA</p>
+            <p style="margin-top: 40px; color: var(--text-dim); font-size: 0.7rem;">© 2026 NARESH SHA J R | CMA | MBA</p>
         </footer>
-
     </div>
+
 </body>
 </html>
