@@ -3,344 +3,296 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naresh Sha J R | Strategic Finance Leader</title>
+    <title>Naresh Sha J R | Senior Finance Leader</title>
     <style>
-        /* CSS Variables for a Premium Palette */
         :root {
-            --bg-dark: #0f172a;
-            --navy-accent: #1e3a8a;
-            --gold-accent: #eab308;
-            --slate-400: #94a3b8;
-            --slate-100: #f1f5f9;
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --corp-blue: #1e3a8a;
+            --corp-blue-light: #2563eb;
+            --slate-bg: #f8fafc;
+            --white: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --gold: #fbbf24;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--slate-100);
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--slate-bg);
+            color: var(--text-dark);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 30px;
+            padding: 0 20px;
         }
 
-        /* --- Decorative Background Blobs --- */
-        .blob {
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(30, 58, 138, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
-            z-index: -1;
-            top: -200px;
-            right: -100px;
-        }
-
-        /* --- Hero Section --- */
-        header {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
+        /* --- Header & Hero --- */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            color: var(--white);
             padding: 80px 0;
+            border-bottom: 8px solid var(--gold);
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
             align-items: center;
         }
 
-        .hero-text h1 {
-            font-size: clamp(3rem, 8vw, 4.5rem);
-            line-height: 1.1;
-            margin-bottom: 20px;
-            font-weight: 800;
-            letter-spacing: -2px;
-        }
-
-        .hero-text h1 span {
-            color: var(--gold-accent);
-        }
-
-        .tagline {
-            font-size: 1.25rem;
-            color: var(--slate-400);
-            margin-bottom: 35px;
-            max-width: 500px;
-        }
-
-        .profile-container {
-            position: relative;
-            justify-self: center;
-        }
-
-        .profile-image {
+        .profile-img {
             width: 100%;
-            max-width: 450px;
-            border-radius: 30px;
-            filter: grayscale(20%);
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
         }
 
-        /* --- Buttons --- */
-        .cta-group {
-            display: flex;
-            gap: 15px;
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 25px; }
+
+        /* --- KPI Section --- */
+        .kpi-section {
+            background: var(--white);
+            padding: 40px 0;
+            margin-top: -50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
-        .btn {
-            padding: 14px 32px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            text-align: center;
+            gap: 20px;
         }
 
-        .btn-primary {
-            background: var(--slate-100);
-            color: var(--bg-dark);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255,255,255,0.1);
-        }
-
-        .btn-secondary {
-            border: 1px solid var(--glass-border);
-            color: var(--slate-100);
-            background: var(--glass);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.1);
-        }
+        .kpi-item h3 { font-size: 2rem; color: var(--corp-blue); }
+        .kpi-item p { font-size: 0.8rem; font-weight: bold; text-transform: uppercase; color: var(--text-muted); }
 
         /* --- Sections --- */
-        section {
-            padding: 120px 0;
+        section { padding: 80px 0; }
+        .section-title {
+            font-size: 2rem;
+            color: var(--corp-blue);
+            margin-bottom: 40px;
+            border-left: 5px solid var(--gold);
+            padding-left: 15px;
         }
 
-        .section-header {
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .section-header .line {
-            width: 60px;
-            height: 4px;
-            background: var(--gold-accent);
-        }
-
-        /* --- Bento Achievement Cards --- */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
+        /* --- About Section --- */
+        .about-text {
+            background: var(--white);
             padding: 40px;
-            border-radius: 24px;
-            backdrop-filter: blur(10px);
-            transition: 0.3s;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            text-align: justify;
         }
 
-        .card:hover {
-            border-color: var(--gold-accent);
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            color: var(--gold-accent);
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-
-        /* --- Vertical Timeline --- */
-        .timeline {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .timeline-item {
-            padding: 30px;
-            border-left: 2px solid var(--glass-border);
+        /* --- Timeline Journey --- */
+        .journey-container {
             position: relative;
-            margin-bottom: 20px;
         }
 
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -7px;
-            top: 35px;
-            width: 12px;
-            height: 12px;
-            background: var(--gold-accent);
-            border-radius: 50%;
+        .role-card {
+            background: var(--white);
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid var(--corp-blue);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
-        .timeline-date {
-            color: var(--gold-accent);
-            font-weight: bold;
-            font-size: 0.9rem;
+        .role-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
         }
+
+        .role-title { color: var(--corp-blue); font-weight: 800; font-size: 1.2rem; }
+        .role-date { background: #e2e8f0; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
+        
+        .role-card ul { margin-left: 20px; color: var(--text-muted); font-size: 0.95rem; }
+        .role-card li { margin-bottom: 8px; }
 
         /* --- Footer --- */
         footer {
-            background: #0a0f1d;
-            padding: 100px 0 50px;
+            background: var(--corp-blue);
+            color: white;
+            padding: 60px 0;
             text-align: center;
-            border-top: 1px solid var(--glass-border);
         }
 
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .contact-links a {
-            color: var(--slate-400);
+        .contact-btn {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--corp-blue);
+            padding: 15px 40px;
+            border-radius: 30px;
             text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
             transition: 0.3s;
         }
 
-        .contact-links a:hover {
-            color: var(--gold-accent);
-        }
+        .contact-btn:hover { background: #fff; transform: scale(1.05); }
 
-        /* --- Mobile Responsive --- */
-        @media (max-width: 968px) {
+        @media (max-width: 768px) {
             .hero-grid { grid-template-columns: 1fr; text-align: center; }
-            .hero-text h1 { font-size: 3.5rem; }
-            .tagline { margin: 0 auto 35px; }
-            .cta-group { justify-content: center; }
-            .profile-container { order: -1; }
+            .profile-img { max-width: 250px; margin-bottom: 20px; }
+            .role-header { flex-direction: column; }
+            .role-date { margin-top: 10px; }
         }
     </style>
 </head>
 <body>
-    <div class="blob"></div>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <h1>Naresh Sha J R</h1>
+                    <p>CMA, MBA | Strategic Finance Business Partner</p>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <span style="background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 5px; font-size: 0.9rem;">Lead Analyst @ Lennox India</span>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://i.ibb.co/L6v3YfW/Naresh-professional-pic-compressed.jpg" alt="Naresh Sha J R" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </header>
 
     <div class="container">
-        <header>
-            <div class="hero-grid">
-                <div class="hero-text">
-                    <span style="color: var(--gold-accent); font-weight: bold; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">Lead Analyst - FP&A</span>
-                    <h1>Naresh<br>Sha <span>J R</span></h1>
-                    <p class="tagline">A true Finance Business Partner & CMA with 11+ years of expertise in driving cost optimization and financial growth.</p>
-                    <div class="cta-group">
-                        <a href="#contact" class="btn btn-primary">Let's Connect</a>
-                        <a href="#experience" class="btn btn-secondary">View Journey</a>
-                    </div>
-                </div>
-                <div class="profile-container">
-                    <img src="https://raw.githubusercontent.com/nareshsha/portfolio/main/profile.jpg" alt="Naresh Sha J R" class="profile-image" onerror="this.src='https://i.ibb.co/L6v3YfW/Naresh-professional-pic-compressed.jpg'">
-                </div>
+        <div class="kpi-section">
+            <div class="kpi-grid">
+                <div class="kpi-item"><h3>19</h3><p>Total Awards</p></div>
+                <div class="kpi-item"><h3>1</h3><p>Diamond</p></div>
+                <div class="kpi-item"><h3>1</h3><p>Platinum</p></div>
+                <div class="kpi-item"><h3>6</h3><p>Gold</p></div>
+                <div class="kpi-item"><h3>7</h3><p>Silver</p></div>
+                <div class="kpi-item"><h3>3</h3><p>Bronze</p></div>
             </div>
-        </header>
+        </div>
+    </div>
 
-        <section id="impact">
-            <div class="section-header">
-                <h2>Strategic Impact</h2>
-                <div class="line"></div>
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-text">
+                A Finance Business Partner working in a shared service setup for over a decade, I leverage my CMA and MBA qualifications to align finance with business strategy and drive operational excellence. I bring experience from the Automobile and HVAC industries, where I have developed strong expertise in financial planning and operational support. I have also served as a people manager, leading teams with a focus on collaboration, accountability, and professional growth. My expertise spans financial planning & analysis, sales rebate management, annual planning, cost optimization initiatives, process improvement and automation. A key strength I bring is stakeholder management, building trust and credibility through transparent communication and consistent delivery.
             </div>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Diamond Award</h3>
-                    <p>Spearheaded the successful transition of Sales Rebate Management from US to Chennai, establishing a Global Center of Excellence.</p>
-                </div>
-                <div class="card">
-                    <h3>700+ Hours Saved</h3>
-                    <p>Automated Quality Audit processes using Lean methodologies, earning the Annual Individual Excellence Award and White Belt certification.</p>
-                </div>
-                <div class="card">
-                    <h3>MVP Recognition</h3>
-                    <p>Awarded "Most Valuable Player" by US leadership for driving unparalleled process efficiency in month-close activities.</p>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="experience" style="background: rgba(255,255,255,0.01); border-radius: 50px;">
-            <div class="container">
-                <div class="section-header" style="text-align: center;">
-                    <h2 style="display: inline-block;">Professional Journey</h2>
-                    <div class="line" style="margin: 10px auto;"></div>
+    <section id="journey" style="background: #f1f5f9;">
+        <div class="container">
+            <h2 class="section-title">Professional Journey</h2>
+            
+            <div class="journey-container">
+                <div class="role-card">
+                    <div class="role-header">
+                        <div class="role-title">Lead Analyst – FP&A <br><small>Lennox India Technology Center</small></div>
+                        <span class="role-date">Sep 2025 – April 2026</span>
+                    </div>
+                    <ul>
+                        <li>Part of Project Management Office to support corporate initiatives.</li>
+                    </ul>
                 </div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <span class="timeline-date">2025 - 2026</span>
-                        <h4>Lead Analyst – FP&A</h4>
-                        <p>Lennox India Technology Center</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-date">2024 - 2025</span>
-                        <h4>Team Manager – FP&A</h4>
-                        <p>Lennox India Technology Center</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-date">2016 - 2019</span>
-                        <h4>Controller - FP&A</h4>
-                        <p>Ford Motor Private Limited</p>
-                    </div>
-                    <div class="timeline-item">
-                        <span class="timeline-date">2015 - 2016</span>
-                        <h4>Assistant Manager - FP&A</h4>
-                        <p>Hindustan Motor Finance Corporation Limited</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section>
-            <div class="grid-3">
-                <div style="grid-column: span 2;" class="card">
-                    <h2 style="color: white; margin-bottom: 20px;">The Empathetic Leader</h2>
-                    <p>Beyond the numbers, I am a mentor who believes that my team's growth is my own. I lead with empathy and a strategic mindset, ensuring that every individual has the tools to succeed.</p>
+                <div class="role-card">
+                    <div class="role-header">
+                        <div class="role-title">Team Manager – FP&A <br><small>Lennox India Technology Center</small></div>
+                        <span class="role-date">Apr 2024 – Aug 2025</span>
+                    </div>
+                    <ul>
+                        <li>Led FP&A operations for U.S. distribution centers including OPEX analysis, budgeting, forecasting and monthly close.</li>
+                        <li>Transitioned the U.S. Sales Rebate Management process, strengthened controls and reporting accuracy.</li>
+                        <li>Supervised team, hiring, performance reviews, capability development, and executive reporting.</li>
+                        <li>Ensured strong stakeholder management.</li>
+                    </ul>
                 </div>
-                <div class="card" style="background: var(--navy-accent);">
-                    <h3 style="color: white;">Wellness & Arts</h3>
-                    <ul style="list-style: none; margin-top: 10px;">
-                        <li style="margin-bottom: 10px;">🧘 Certified Yoga Instructor</li>
-                        <li style="margin-bottom: 10px;">🎵 Music Therapist</li>
-                        <li>🎶 Budding Flautist</li>
+
+                <div class="role-card">
+                    <div class="role-header">
+                        <div class="role-title">Team Leader – FP&A <br><small>Lennox India Technology Center</small></div>
+                        <span class="role-date">Apr 2022 – Mar 2024</span>
+                    </div>
+                    <ul>
+                        <li>Managed IT Telecom & Asset Management, Customer Financial Services FP&A activities as IC + team lead.</li>
+                        <li>Delivered dashboards, OPEX reporting, and Blackline compliance.</li>
+                        <li>Implemented process improvements to strengthen analytical output and reduce cycle time.</li>
+                    </ul>
+                </div>
+
+                <div class="role-card">
+                    <div class="role-header">
+                        <div class="role-title">Controller - FP&A <br><small>Ford Motor Private Limited</small></div>
+                        <span class="role-date">Jan 2016 – Dec 2019</span>
+                    </div>
+                    <ul>
+                        <li>Owned SG&A budgeting, forecasting, and financial control processes.</li>
+                        <li>Conducted variance analysis for cost / revenue and presented insights to finance leaders.</li>
+                        <li>Managed accruals, reconciliations, and month-close deliverables.</li>
+                        <li>Strengthened PO compliance and spending discipline across departments.</li>
+                    </ul>
+                </div>
+
+                <div class="role-card" style="border-left-color: #94a3b8;">
+                    <div class="role-header">
+                        <div class="role-title">Assistant Manager - FP&A <br><small>Hindustan Motor Finance Corp Ltd</small></div>
+                        <span class="role-date">2015 – Jan 2016</span>
+                    </div>
+                    <ul>
+                        <li>Prepared financial statements, MIS reports, and monthly performance summaries.</li>
+                        <li>Managed month-close activities including accruals and payroll accounting.</li>
+                        <li>Maintained inventory accounting in SAP and coordinated statutory audits.</li>
                     </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <footer id="contact">
-            <h2>Get In Touch</h2>
-            <p style="color: var(--slate-400); margin-top: 10px;">Based in Chennai, India | Open to Global Opportunities</p>
-            <div class="contact-links">
-                <a href="mailto:Nareshsha13@gmail.com">Nareshsha13@gmail.com</a>
-                <a href="https://www.linkedin.com/in/naresh-sha-j-r-633371b3" target="_blank">LinkedIn</a>
+    <section>
+        <div class="container">
+            <h2 class="section-title">Leadership & Wellness</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div class="about-text" style="background: var(--corp-blue); color: white;">
+                    <h4 style="margin-bottom: 10px; color: var(--gold);">Mentorship First</h4>
+                    <p>I am an empathetic leader. I believe that my team's growth is directly tied to my own growth, fostering an environment of accountability and collaboration.</p>
+                </div>
+                <div class="about-text" style="border: 2px solid var(--corp-blue);">
+                    <h4 style="margin-bottom: 10px; color: var(--corp-blue);">Personal Passions</h4>
+                    <p>Certified Yoga Instructor & Music Therapist. Budding Flautist. I apply the discipline of these arts to the precision of my financial career.</p>
+                </div>
             </div>
-            <p style="margin-top: 60px; font-size: 0.8rem; color: var(--glass-border);">© 2026 Naresh Sha J R. Designed for Impact.</p>
-        </footer>
-    </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h2>Let's Drive Excellence Together</h2>
+            <p>Based in Chennai, India</p>
+            <a href="mailto:Nareshsha13@gmail.com" class="contact-btn">Email: Nareshsha13@gmail.com</a>
+            <br><br>
+            <a href="https://www.linkedin.com/in/naresh-sha-j-r-633371b3" target="_blank" style="color: white; text-decoration: none; font-size: 0.9rem;">View LinkedIn Profile →</a>
+            <p style="margin-top: 50px; opacity: 0.5; font-size: 0.8rem;">© 2026 Naresh Sha J R | CMA | MBA | Strategic FP&A Leader</p>
+        </div>
+    </footer>
+
 </body>
 </html>
