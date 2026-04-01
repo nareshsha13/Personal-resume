@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naresh Sha J R | Finance Business Partner & Lead Analyst</title>
+    <style>
+        /* --- Base Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc; /* Slate Grey Light */
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: #1e3a8a; /* Deep Navy Blue */
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #f8fafc;
+            color: #1e3a8a;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background: #e2e8f0;
+        }
+
+        /* --- Section Styling --- */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: #1e3a8a;
+            margin: 10px auto;
+        }
+
+        /* --- About Section --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+        }
+
+        /* --- Professional Journey (Timeline) --- */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            padding: 20px 30px;
+            border-left: 4px solid #1e3a8a;
+            position: relative;
+            background: white;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        .timeline-item h3 { margin-bottom: 5px; }
+        .timeline-date {
+            font-weight: bold;
+            color: #64748b;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* --- Impact Cards --- */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-top: 5px solid #1e3a8a;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            border-radius: 0 0 8px 8px;
+        }
+
+        .award-tag {
+            background: #dcfce7;
+            color: #166534;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        /* --- Leadership & Hobbies --- */
+        .hobby-section {
+            background-color: #e2e8f0;
+            padding: 60px 0;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .hobby-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .hobby-pill {
+            background: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            color: #1e3a8a;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* --- Contact/Footer --- */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+
+        .social-links a:hover {
+            border-bottom: 1px solid white;
+        }
+
+        .copyright {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Naresh Sha J R</h1>
+            <p>Finance Business Partner | CMA | Lead Analyst - FP&A</p>
+            <div>
+                <a href="#contact" class="btn">Get In Touch</a>
+                <a href="#journey" class="btn">View Experience</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Professional Profile</h2>
+            <div class="about-grid">
+                <div>
+                    <p>I am a true <strong>Finance Business Partner</strong> with over 11 years of experience in driving financial excellence and strategic growth. Based in Chennai, I specialize in transforming complex data into actionable business insights.</p>
+                    <p style="margin-top: 15px;">My expertise spans Business Finance, Budgeting, and Forecasting, with a deep focus on cost optimization and Sales Rebate Management. I believe finance is more than numbers—it's about partnering with leadership to navigate the future.</p>
+                </div>
+                <div style="background: #1e3a8a; color: white; padding: 30px; border-radius: 8px;">
+                    <h3>Core Expertise</h3>
+                    <ul style="margin-top: 15px; list-style-position: inside;">
+                        <li>Strategic FP&A</li>
+                        <li>Variance Analysis</li>
+                        <li>Cost Optimization</li>
+                        <li>Sales Rebate Management</li>
+                        <li>People Management & Mentoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="journey" style="background: #f1f5f9;">
+        <div class="container">
+            <h2 class="section-title">Professional Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">Sep 2025 – April 2026</span>
+                    <h3>Lead Analyst – FP&A</h3>
+                    <p>Lennox India Technology Center</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Apr 2024 – Aug 2025</span>
+                    <h3>Team Manager – FP&A</h3>
+                    <p>Lennox India Technology Center</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Apr 2022 – Mar 2024</span>
+                    <h3>Team Leader – FP&A</h3>
+                    <p>Lennox India Technology Center</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Dec 2019 – Mar 2022</span>
+                    <h3>Senior Analyst – FP&A</h3>
+                    <p>Lennox India Technology Center</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Jan 2016 – Dec 2019</span>
+                    <h3>Controller - FP&A</h3>
+                    <p>Ford Motor Private Limited</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Jan 2015 – Jan 2016</span>
+                    <h3>Assistant Manager - FP&A</h3>
+                    <p>Hindustan Motor Finance Corporation Limited</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="impact">
+        <div class="container">
+            <h2 class="section-title">Impact & Key Achievements</h2>
+            <div class="impact-grid">
+                <div class="card">
+                    <span class="award-tag">Diamond Award 2025</span>
+                    <h3>Global COE Transition</h3>
+                    <p>Led the successful transition of the Sales Rebate Management process from the US to the Chennai Center of Excellence. Recognized by the VP of Finance for seamless execution.</p>
+                </div>
+                <div class="card">
+                    <span class="award-tag">MVP Award 2022</span>
+                    <h3>Process Efficiency</h3>
+                    <p>Optimized journal entry postings, resulting in a significantly faster month-close turnaround. First resource to receive this award from the US FP&A residential leadership team.</p>
+                </div>
+                <div class="card">
+                    <span class="award-tag">Individual Excellence 2021</span>
+                    <h3>Audit Automation</h3>
+                    <p>Automated the Quality Audit Process, saving over 700 hours annually. Achieved Lean White Belt certification for this high-impact project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="hobby-section">
+                <h2 style="margin-bottom: 20px;">Beyond the Spreadsheet</h2>
+                <p style="max-width: 700px; margin: 0 auto;">I am an <strong>Empathetic Leader</strong> who believes that my team's growth is my own growth. Outside of finance, I find balance and harmony through my passions for wellness and music.</p>
+                <div class="hobby-grid">
+                    <div class="hobby-pill">Certified Yoga Instructor</div>
+                    <div class="hobby-pill">Music Therapist</div>
+                    <div class="hobby-pill">Budding Flautist</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 30px;">Let's Connect</h2>
+            <p>Interested in discussing finance strategy or leadership? Reach out!</p>
+            <div class="social-links" style="margin-top: 30px;">
+                <a href="mailto:Nareshsha13@gmail.com">Email Me</a>
+                <a href="https://www.linkedin.com/in/naresh-sha-j-r-633371b3" target="_blank">LinkedIn Profile</a>
+            </div>
+            <p class="copyright">© 2026 Naresh Sha J R | CMA | Finance Leader</p>
+        </div>
+    </footer>
+
+</body>
+</html>
