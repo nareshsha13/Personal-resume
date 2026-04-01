@@ -102,7 +102,7 @@
             background: var(--glass-border);
         }
 
-        /* --- Content Cards (Reference Layout) --- */
+        /* --- Content Cards --- */
         .content-card {
             background: var(--card-bg);
             border: 1px solid var(--glass-border);
@@ -142,6 +142,22 @@
         .kpi-item h3 { color: var(--accent); font-size: 1.5rem; }
         .kpi-item p { font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; font-weight: 700; }
 
+        /* --- Competencies & Education Lists --- */
+        .grid-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            list-style: none;
+        }
+        .list-item {
+            position: relative;
+            padding-left: 20px;
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+        }
+        .list-item::before { content: "·"; position: absolute; left: 0; color: var(--accent); font-weight: bold; font-size: 1.5rem; line-height: 1; }
+
         /* --- Experience --- */
         .exp-item { margin-bottom: 30px; }
         .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
@@ -179,7 +195,8 @@
         }
         .contact-btn:hover { background: #fff; transform: translateY(-2px); }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            .grid-list { grid-template-columns: 1fr; }
             .nav-container { gap: 10px; font-size: 0.7rem; }
             .awards-grid { grid-template-columns: 1fr; }
             .exp-header { flex-direction: column; }
@@ -192,10 +209,10 @@
     <nav>
         <div class="nav-container">
             <a href="#about">About</a>
+            <a href="#competencies">Skills</a>
             <a href="#awards">Awards</a>
             <a href="#experience">Experience</a>
-            <a href="#impact">Impact</a>
-            <a href="#interests">Life</a>
+            <a href="#education">Education</a>
         </div>
     </nav>
 
@@ -212,6 +229,22 @@
                 <p style="color: var(--text-dim); text-align: justify;">
                     A Finance Business Partner working in a shared service setup for over a decade, I leverage my <strong>CMA and MBA</strong> qualifications to align finance with business strategy and drive operational excellence. I bring experience from the Automobile and HVAC industries, where I have developed strong expertise in financial planning and operational support. I have also served as a people manager, leading teams with a focus on collaboration, accountability, and professional growth.
                 </p>
+            </div>
+        </section>
+
+        <section id="competencies">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="content-card">
+                <ul class="grid-list">
+                    <li class="list-item">Financial Planning & Analysis (FP&A)</li>
+                    <li class="list-item">Budgeting, Forecasting & Annual Operating Plan (AOP)</li>
+                    <li class="list-item">OPEX Optimization & Cost Management</li>
+                    <li class="list-item">Month-End Close Governance & Reporting</li>
+                    <li class="list-item">Variance Analysis & KPI Dashboards</li>
+                    <li class="list-item">Stakeholder Management & Cross-Functional Collaboration</li>
+                    <li class="list-item">Process Transition, Automation & Standardization</li>
+                    <li class="list-item">Team Leadership, Coaching & Performance Management</li>
+                </ul>
             </div>
         </section>
 
@@ -233,7 +266,6 @@
 
         <section id="experience">
             <h2 class="section-title">Professional Journey</h2>
-            
             <div class="content-card">
                 <div class="exp-item">
                     <div class="exp-header">
@@ -241,9 +273,7 @@
                         <span class="exp-date">Sep 2025 – Apr 2026</span>
                     </div>
                     <span class="exp-company">Lennox India Technology Center</span>
-                    <ul class="exp-list">
-                        <li>Part of Project Management Office (PMO) to support corporate initiatives.</li>
-                    </ul>
+                    <ul class="exp-list"><li>Part of Project Management Office (PMO) to support corporate initiatives.</li></ul>
                 </div>
 
                 <div class="exp-item">
@@ -253,39 +283,23 @@
                     </div>
                     <span class="exp-company">Lennox India Technology Center</span>
                     <ul class="exp-list">
-                        <li>Led FP&A operations for U.S. distribution centers including OPEX analysis, budgeting, and forecasting.</li>
-                        <li>Transitioned the U.S. Sales Rebate Management process; strengthened controls and reporting accuracy.</li>
+                        <li>Led FP&A operations for U.S. distribution centers including OPEX analysis and budgeting.</li>
+                        <li>Transitioned the U.S. Sales Rebate Management process; strengthened controls.</li>
                         <li>Supervised team hiring, performance reviews, and capability development.</li>
-                    </ul>
-                </div>
-
-                <div class="exp-item">
-                    <div class="exp-header">
-                        <span class="exp-title">Controller - FP&A</span>
-                        <span class="exp-date">Jan 2016 – Dec 2019</span>
-                    </div>
-                    <span class="exp-company">Ford Motor Private Limited</span>
-                    <ul class="exp-list">
-                        <li>Owned SG&A budgeting, forecasting, and financial control processes.</li>
-                        <li>Conducted variance analysis for cost/revenue and presented insights to leadership.</li>
-                        <li>Strengthened PO compliance and spending discipline across departments.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section id="impact">
-            <h2 class="section-title">Strategic Impact</h2>
+        <section id="education">
+            <h2 class="section-title">Education</h2>
             <div class="content-card">
-                <div class="exp-item">
-                    <p><strong>Global COE Transition:</strong> Successful Transition of Sales Rebate management process from US to Chennai. Received Diamond award (2025) from VP Finance.</p>
-                </div>
-                <div class="exp-item">
-                    <p><strong>Process Efficiency:</strong> Optimized journal entry postings for rapid month-close. Awarded Most Valuable Player in 2022 (First from Residential team).</p>
-                </div>
-                <div class="exp-item" style="margin-bottom: 0;">
-                    <p><strong>Automation:</strong> Automated Quality Audit Process saving 700+ hours per annum. Lean White Belt certified for this excellence project.</p>
-                </div>
+                <ul class="exp-list">
+                    <li><strong>CMA – ICWAI</strong> (2013, First Attempt)</li>
+                    <li><strong>MBA – Finance</strong>, University of Madras (2016)</li>
+                    <li><strong>B.Com</strong> – Vivekananda College, Chennai (2013)</li>
+                    <li><strong>FMVA</strong> – Financial Modeling & Valuation Analyst (In Progress – CFI)</li>
+                </ul>
             </div>
         </section>
 
@@ -301,7 +315,6 @@
         </section>
 
         <footer>
-            <p style="margin-bottom: 20px; font-weight: 600;">Let's drive excellence together.</p>
             <a href="mailto:Nareshsha13@gmail.com" class="contact-btn">Email Me</a>
             <div style="margin-top: 30px;">
                 <a href="https://www.linkedin.com/in/naresh-sha-j-r-633371b3" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 0.8rem; font-weight: 700;">LINKEDIN PROFILE →</a>
@@ -309,6 +322,5 @@
             <p style="margin-top: 40px; color: var(--text-dim); font-size: 0.7rem;">© 2026 NARESH SHA J R | CMA | MBA</p>
         </footer>
     </div>
-
 </body>
 </html>
