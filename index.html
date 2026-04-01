@@ -34,7 +34,8 @@
 
         nav { position: sticky; top: 0; background: rgba(13, 27, 51, 0.85); backdrop-filter: blur(12px); z-index: 100; border-bottom: 1px solid var(--glass-border); padding: 15px 0; }
         .nav-container { max-width: 800px; margin: 0 auto; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .nav-container a { color: var(--text-dim); text-decoration: none; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-container a { color: var(--text-dim); text-decoration: none; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .nav-container a:hover { color: var(--accent); }
 
         .main-wrapper { max-width: 850px; margin: 0 auto; padding: 40px 20px; position: relative; }
         .profile-header { text-align: center; margin-bottom: 50px; }
@@ -45,14 +46,27 @@
         section { margin-bottom: 60px; }
         .section-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 25px; display: flex; align-items: center; gap: 15px; }
         .section-title::after { content: ""; flex: 1; height: 1px; background: linear-gradient(to right, var(--glass-border), transparent); }
-        .content-card { background: var(--card-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: 30px; margin-bottom: 20px; }
+        .content-card { background: var(--card-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: 30px; margin-bottom: 20px; backdrop-filter: blur(5px); }
+
+        /* --- Skill Grid --- */
+        .grid-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; list-style: none; }
+        .list-item { position: relative; padding-left: 20px; font-size: 0.95rem; color: var(--text-dim); margin-bottom: 8px; }
+        .list-item::before { content: "·"; position: absolute; left: 0; color: var(--accent); font-weight: bold; font-size: 1.5rem; line-height: 1; }
 
         /* --- Achievement Boxes --- */
         .achievements-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-        .achievement-box { background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%); border: 1px solid var(--glass-border); border-left: 4px solid var(--accent); padding: 25px; border-radius: 12px; }
-        .achievement-box h4 { color: var(--accent); margin-bottom: 8px; font-size: 1.1rem; text-transform: uppercase; }
+        .achievement-box { background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%); border: 1px solid var(--glass-border); border-left: 4px solid var(--accent); padding: 25px; border-radius: 12px; transition: 0.3s; }
+        .achievement-box:hover { transform: translateX(10px); background: rgba(255, 255, 255, 0.08); }
+        .achievement-box h4 { color: var(--accent); margin-bottom: 8px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* --- Career Blocks --- */
+        /* --- Awards Section --- */
+        .awards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+        .award-mini-card { background: rgba(212, 175, 55, 0.08); border: 1px solid var(--accent); padding: 20px; border-radius: 12px; text-align: center; font-weight: 700; color: #fff; }
+        .kpi-row { display: flex; justify-content: space-between; background: var(--glass); padding: 20px; border-radius: 12px; text-align: center; border: 1px solid var(--glass-border); }
+        .kpi-item h3 { color: var(--accent); font-size: 1.5rem; }
+        .kpi-item p { font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; font-weight: 700; }
+
+        /* --- Experience --- */
         .exp-item { margin-bottom: 35px; }
         .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; }
         .exp-title { font-weight: 700; font-size: 1.1rem; color: #fff; }
@@ -62,17 +76,14 @@
         .exp-list li { position: relative; font-size: 0.95rem; color: var(--text-dim); margin-bottom: 8px; }
         .exp-list li::before { content: "•"; position: absolute; left: -15px; color: var(--accent); }
 
-        .awards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
-        .award-mini-card { background: rgba(212, 175, 55, 0.08); border: 1px solid var(--accent); padding: 20px; border-radius: 12px; text-align: center; font-weight: 700; }
-        .kpi-row { display: flex; justify-content: space-between; background: var(--glass); padding: 20px; border-radius: 12px; text-align: center; border: 1px solid var(--glass-border); }
-
-        .interests-flex { display: flex; justify-content: space-around; text-align: center; }
-        .interest-icon { font-size: 2.2rem; margin-bottom: 10px; display: block; }
+        .interests-flex { display: flex; justify-content: space-around; text-align: center; padding: 10px 0; }
+        .interest-icon { font-size: 2.2rem; margin-bottom: 10px; display: block; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); }
 
         footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--glass-border); }
-        .contact-btn { background: var(--accent); color: #000; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: 700; }
+        .contact-btn { background: var(--accent); color: #000; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: 700; transition: 0.3s; }
+        .contact-btn:hover { background: #fff; transform: scale(1.05); }
 
-        @media (max-width: 768px) { .exp-header { flex-direction: column; } .awards-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .grid-list, .awards-grid { grid-template-columns: 1fr; } .exp-header { flex-direction: column; } }
     </style>
 </head>
 <body>
@@ -87,6 +98,7 @@
             <a href="#about">About</a>
             <a href="#competencies">Skills</a>
             <a href="#achievements">Impact</a>
+            <a href="#awards">Recognition</a>
             <a href="#experience">Journey</a>
             <a href="#education">Education</a>
             <a href="#personal">Personal</a>
@@ -104,8 +116,24 @@
             <h2 class="section-title">Professional Profile</h2>
             <div class="content-card">
                 <p style="color: var(--text-dim); text-align: justify;">
-                    A Finance Business Partner working in a shared service setup for over a decade, I leverage my CMA and MBA qualifications to align finance with business strategy and drive operational excellence. I bring experience from the Automobile and HVAC industries, where I have developed strong expertise in financial planning and operational support. I have also served as a people manager, leading teams with a focus on collaboration, accountability, and professional growth. My expertise spans financial planning & analysis, sales rebate management, annual planning, cost optimization initiatives, process improvement and automation and people management. I build trust and credibility through transparent communication and consistent delivery.
+                    A Finance Business Partner working in a shared service setup for over a decade, I leverage my CMA and MBA qualifications to align finance with business strategy and drive operational excellence. I bring experience from the Automobile and HVAC industries, where I have developed strong expertise in financial planning and operational support. I have also served as a people manager, leading teams with a focus on collaboration, accountability, and professional growth, experience that continues to shape my approach today. My expertise spans financial planning & analysis, sales rebate management, annual planning, cost optimization initiatives, process improvement and automation and people management.
                 </p>
+            </div>
+        </section>
+
+        <section id="competencies">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="content-card">
+                <ul class="grid-list">
+                    <li class="list-item">Financial Planning & Analysis (FP&A)</li>
+                    <li class="list-item">Budgeting, Forecasting & AOP</li>
+                    <li class="list-item">OPEX Optimization & Cost Management</li>
+                    <li class="list-item">Month-End Close Governance</li>
+                    <li class="list-item">Variance Analysis & KPI Dashboards</li>
+                    <li class="list-item">Stakeholder Management</li>
+                    <li class="list-item">Process Transition & Automation</li>
+                    <li class="list-item">Team Leadership & Coaching</li>
+                </ul>
             </div>
         </section>
 
@@ -114,23 +142,38 @@
             <div class="achievements-grid">
                 <div class="achievement-box">
                     <h4>Global COE Transition</h4>
-                    <p>Successful Transition of Sales Rebate management process from US to Chennai Center of excellence team. Received <strong>Diamond award (2025)</strong> from VP Finance (Residential).</p>
+                    <p>Successful Transition of Sales Rebate management process from US to Chennai Center of Excellence. Received <strong>Diamond award (2025)</strong> from VP Finance (Residential).</p>
                 </div>
                 <div class="achievement-box">
                     <h4>Process Efficiency</h4>
-                    <p>Optimized journal entry postings resulting in fast month-close. Received <strong>"Most Valuable Player" (2022)</strong> — first resource from US FP&A residential team to be recognized.</p>
+                    <p>Optimized journal entry postings resulting in rapid month-close. Received <strong>"Most Valuable Player" (2022)</strong> recognition.</p>
                 </div>
                 <div class="achievement-box">
                     <h4>Operational Automation</h4>
-                    <p>Automated Quality Audit Process saving <strong>700+ hours annually</strong>. Achieved Lean White Belt certification and received the "Annual Individual Excellence award" (2021).</p>
+                    <p>Automated Quality Audit Process saving <strong>700+ hours annually</strong>. Achieved Lean White Belt certification and received the <strong>Annual Individual Excellence award (2021)</strong>.</p>
                 </div>
+            </div>
+        </section>
+
+        <section id="awards">
+            <h2 class="section-title">Rewards & Recognition</h2>
+            <div class="awards-grid">
+                <div class="award-mini-card">Annual Individual Excellence Award</div>
+                <div class="award-mini-card">Most Valuable Player Award</div>
+            </div>
+            <div class="kpi-row">
+                <div class="kpi-item"><h3>20</h3><p>Total</p></div>
+                <div class="kpi-item"><h3>2</h3><p>Diamond</p></div>
+                <div class="kpi-item"><h3>1</h3><p>Platinum</p></div>
+                <div class="kpi-item"><h3>6</h3><p>Gold</p></div>
+                <div class="kpi-item"><h3>7</h3><p>Silver</p></div>
+                <div class="kpi-item"><h3>3</h3><p>Bronze</p></div>
             </div>
         </section>
 
         <section id="experience">
             <h2 class="section-title">Career Journey</h2>
             <div class="content-card">
-                
                 <div class="exp-item">
                     <div class="exp-header">
                         <span class="exp-title">Lead Analyst – FP&A</span>
@@ -147,9 +190,9 @@
                     </div>
                     <span class="exp-company">Lennox India Technology Center</span>
                     <ul class="exp-list">
-                        <li>Led FP&A operations for U.S. distribution centers including OPEX analysis, budgeting, forecasting and monthly close.</li>
-                        <li>Transitioned the U.S. Sales Rebate Management process; strengthened controls and reporting accuracy.</li>
-                        <li>Supervised team, hiring, performance reviews, capability development, and executive reporting.</li>
+                        <li>Led FP&A operations for U.S. distribution centers including OPEX, budgeting, and forecasting.</li>
+                        <li>Transitioned the U.S. Sales Rebate Management process; strengthened controls.</li>
+                        <li>Supervised team, hiring, and capability development.</li>
                     </ul>
                 </div>
 
@@ -160,9 +203,8 @@
                     </div>
                     <span class="exp-company">Lennox India Technology Center</span>
                     <ul class="exp-list">
-                        <li>Managed IT Telecom & Asset Management, Customer Financial Services FP&A activities as IC + team lead.</li>
+                        <li>Managed IT Telecom & Asset Management and Customer Financial Services FP&A.</li>
                         <li>Delivered dashboards, OPEX reporting, and Blackline compliance.</li>
-                        <li>Implemented process improvements to strengthen analytical output and reduce cycle time.</li>
                     </ul>
                 </div>
 
@@ -175,7 +217,6 @@
                     <ul class="exp-list">
                         <li>Owned budgeting & forecasting for IT asset leasing.</li>
                         <li>Performed cost allocation, accrual management, and managed spent approvals.</li>
-                        <li>Presented KPI packs to leadership and conducted root-cause analysis for financial deviations.</li>
                     </ul>
                 </div>
 
@@ -187,21 +228,18 @@
                     <span class="exp-company">Chennai, India</span>
                     <ul class="exp-list">
                         <li>Owned SG&A budgeting, forecasting, and financial control processes.</li>
-                        <li>Conducted variance analysis for cost/revenue and presented insights to finance leaders.</li>
-                        <li>Managed accruals, reconciliations, and month-close deliverables.</li>
-                        <li>Strengthened PO compliance and spending discipline across departments.</li>
+                        <li>Conducted variance analysis for cost/revenue and presented insights.</li>
                     </ul>
                 </div>
 
                 <div class="exp-item" style="margin-bottom: 0;">
                     <div class="exp-header">
-                        <span class="exp-title">HINDUSTAN MOTOR FINANCE CORPORATION LTD</span>
+                        <span class="exp-title">HINDUSTAN MOTOR FINANCE CORP LTD</span>
                         <span class="exp-date">2015 – Jan 2016</span>
                     </div>
                     <span class="exp-company">Chennai, India</span>
                     <ul class="exp-list">
-                        <li>Prepared financial statements, MIS reports, and monthly performance summaries.</li>
-                        <li>Managed month-close activities including accruals and payroll accounting.</li>
+                        <li>Prepared financial statements, MIS reports, and monthly summaries.</li>
                         <li>Maintained inventory accounting in SAP and coordinated statutory audits.</li>
                     </ul>
                 </div>
