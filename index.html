@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0d1b33; /* Corporate Midnight Blue */
-            --accent: #d4af37;  /* Executive Gold */
+            --primary: #0d1b33; 
+            --accent: #d4af37;  
             --glass: rgba(255, 255, 255, 0.05);
             --glass-border: rgba(255, 255, 255, 0.12);
             --text-main: #f1f5f9;
@@ -17,15 +17,8 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        
-        body { 
-            background-color: var(--primary); 
-            color: var(--text-main); 
-            line-height: 1.6; 
-            overflow-x: hidden;
-        }
+        body { background-color: var(--primary); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
 
-        /* --- Background Decoration --- */
         .bg-glow {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -33,7 +26,6 @@
             z-index: -1;
         }
 
-        /* --- Sticky Navigation (Reference Style) --- */
         nav {
             position: sticky;
             top: 0;
@@ -43,163 +35,54 @@
             border-bottom: 1px solid var(--glass-border);
             padding: 15px 0;
         }
-        .nav-container {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-        }
-        .nav-container a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
+        .nav-container { max-width: 800px; margin: 0 auto; display: flex; justify-content: center; gap: 20px; }
+        .nav-container a { color: var(--text-dim); text-decoration: none; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
         .nav-container a:hover { color: var(--accent); }
 
-        /* --- Main Content Wrap --- */
-        .main-wrapper {
-            max-width: 850px; /* Centered content like reference */
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+        .main-wrapper { max-width: 850px; margin: 0 auto; padding: 40px 20px; }
 
-        /* --- Profile Header --- */
-        .profile-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        .profile-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent);
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .profile-header h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 5px; }
+        .profile-header { text-align: center; margin-bottom: 50px; }
+        .profile-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent); margin-bottom: 20px; }
+        .profile-header h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 5px; }
         .profile-header p { color: var(--accent); font-weight: 600; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; }
 
-        /* --- Section Styling --- */
         section { margin-bottom: 60px; }
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: 800;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .section-title::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: var(--glass-border);
-        }
+        .section-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 25px; display: flex; align-items: center; gap: 15px; }
+        .section-title::after { content: ""; flex: 1; height: 1px; background: var(--glass-border); }
 
-        /* --- Content Cards --- */
-        .content-card {
-            background: var(--card-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 20px;
-            transition: 0.3s;
-        }
-        .content-card:hover { border-color: var(--accent); background: rgba(255,255,255,0.05); }
+        .content-card { background: var(--card-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: 30px; margin-bottom: 20px; }
 
-        /* --- Award Spotlights --- */
-        .awards-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        .award-mini-card {
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid var(--accent);
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            font-weight: 700;
-            font-size: 0.95rem;
-        }
+        .awards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+        .award-mini-card { background: rgba(212, 175, 55, 0.1); border: 1px solid var(--accent); padding: 20px; border-radius: 12px; text-align: center; font-weight: 700; }
 
-        /* --- KPIs --- */
-        .kpi-row {
-            display: flex;
-            justify-content: space-between;
-            background: var(--glass);
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-        }
+        .kpi-row { display: flex; justify-content: space-between; background: var(--glass); padding: 20px; border-radius: 12px; text-align: center; }
         .kpi-item h3 { color: var(--accent); font-size: 1.5rem; }
-        .kpi-item p { font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; font-weight: 700; }
+        .kpi-item p { font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; }
 
-        /* --- Competencies & Education Lists --- */
-        .grid-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            list-style: none;
-        }
-        .list-item {
-            position: relative;
-            padding-left: 20px;
-            font-size: 0.95rem;
-            color: var(--text-dim);
-            margin-bottom: 8px;
-        }
-        .list-item::before { content: "·"; position: absolute; left: 0; color: var(--accent); font-weight: bold; font-size: 1.5rem; line-height: 1; }
+        .grid-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; list-style: none; }
+        .list-item { position: relative; padding-left: 20px; font-size: 0.95rem; color: var(--text-dim); margin-bottom: 8px; }
+        .list-item::before { content: "·"; position: absolute; left: 0; color: var(--accent); font-weight: bold; font-size: 1.5rem; }
 
-        /* --- Experience --- */
-        .exp-item { margin-bottom: 30px; }
-        .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+        .exp-item { margin-bottom: 35px; }
+        .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; }
         .exp-title { font-weight: 700; font-size: 1.1rem; color: #fff; }
         .exp-date { font-size: 0.85rem; color: var(--accent); font-weight: 600; }
-        .exp-company { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 10px; display: block; }
+        .exp-company { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 10px; display: block; font-style: italic; }
         .exp-list { list-style: none; padding-left: 15px; }
         .exp-list li { position: relative; font-size: 0.95rem; color: var(--text-dim); margin-bottom: 8px; }
         .exp-list li::before { content: "•"; position: absolute; left: -15px; color: var(--accent); }
 
-        /* --- Interests --- */
-        .interests-flex {
-            display: flex;
-            justify-content: space-around;
-            text-align: center;
-        }
-        .interest-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
+        .interests-flex { display: flex; justify-content: space-around; text-align: center; padding: 10px 0; }
+        .interest-icon { font-size: 2.2rem; margin-bottom: 10px; display: block; }
 
-        /* --- Footer --- */
-        footer {
-            text-align: center;
-            padding: 60px 0;
-            border-top: 1px solid var(--glass-border);
-        }
-        .contact-btn {
-            background: var(--accent);
-            color: #000;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
-            display: inline-block;
-            transition: 0.3s;
-        }
-        .contact-btn:hover { background: #fff; transform: translateY(-2px); }
+        footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--glass-border); }
+        .contact-btn { background: var(--accent); color: #000; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: 700; }
 
         @media (max-width: 768px) {
             .grid-list { grid-template-columns: 1fr; }
-            .nav-container { gap: 10px; font-size: 0.7rem; }
             .awards-grid { grid-template-columns: 1fr; }
             .exp-header { flex-direction: column; }
+            .nav-container { gap: 10px; overflow-x: auto; padding: 0 10px; }
         }
     </style>
 </head>
@@ -213,6 +96,7 @@
             <a href="#awards">Awards</a>
             <a href="#experience">Experience</a>
             <a href="#education">Education</a>
+            <a href="#personal">Personal</a>
         </div>
     </nav>
 
@@ -227,7 +111,7 @@
             <h2 class="section-title">Professional Profile</h2>
             <div class="content-card">
                 <p style="color: var(--text-dim); text-align: justify;">
-                    A Finance Business Partner working in a shared service setup for over a decade, I leverage my <strong>CMA and MBA</strong> qualifications to align finance with business strategy and drive operational excellence. I bring experience from the Automobile and HVAC industries, where I have developed strong expertise in financial planning and operational support. I have also served as a people manager, leading teams with a focus on collaboration, accountability, and professional growth.
+                    A Finance Business Partner working in a shared service setup for over a decade, I leverage my <strong>CMA and MBA</strong> qualifications to align finance with business strategy and drive operational excellence. I bring experience from the Automobile and HVAC industries, leading teams with a focus on collaboration, accountability, and professional growth.
                 </p>
             </div>
         </section>
@@ -237,13 +121,13 @@
             <div class="content-card">
                 <ul class="grid-list">
                     <li class="list-item">Financial Planning & Analysis (FP&A)</li>
-                    <li class="list-item">Budgeting, Forecasting & Annual Operating Plan (AOP)</li>
+                    <li class="list-item">Budgeting, Forecasting & AOP</li>
                     <li class="list-item">OPEX Optimization & Cost Management</li>
-                    <li class="list-item">Month-End Close Governance & Reporting</li>
+                    <li class="list-item">Month-End Close Governance</li>
                     <li class="list-item">Variance Analysis & KPI Dashboards</li>
-                    <li class="list-item">Stakeholder Management & Cross-Functional Collaboration</li>
-                    <li class="list-item">Process Transition, Automation & Standardization</li>
-                    <li class="list-item">Team Leadership, Coaching & Performance Management</li>
+                    <li class="list-item">Stakeholder Management</li>
+                    <li class="list-item">Process Transition & Automation</li>
+                    <li class="list-item">Team Leadership & Coaching</li>
                 </ul>
             </div>
         </section>
@@ -265,7 +149,7 @@
         </section>
 
         <section id="experience">
-            <h2 class="section-title">Professional Journey</h2>
+            <h2 class="section-title">Career Journey</h2>
             <div class="content-card">
                 <div class="exp-item">
                     <div class="exp-header">
@@ -284,8 +168,32 @@
                     <span class="exp-company">Lennox India Technology Center</span>
                     <ul class="exp-list">
                         <li>Led FP&A operations for U.S. distribution centers including OPEX analysis and budgeting.</li>
-                        <li>Transitioned the U.S. Sales Rebate Management process; strengthened controls.</li>
+                        <li>Transitioned the U.S. Sales Rebate Management process; strengthened controls and reporting.</li>
                         <li>Supervised team hiring, performance reviews, and capability development.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Team Leader – FP&A</span>
+                        <span class="exp-date">Apr 2022 – Mar 2024</span>
+                    </div>
+                    <span class="exp-company">Lennox India Technology Center</span>
+                    <ul class="exp-list">
+                        <li>Managed IT Telecom & Asset Management and Customer Financial Services FP&A activities.</li>
+                        <li>Delivered dashboards, OPEX reporting, and Blackline compliance.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item" style="margin-bottom: 0;">
+                    <div class="exp-header">
+                        <span class="exp-title">Controller – FP&A</span>
+                        <span class="exp-date">Jan 2016 – Dec 2019</span>
+                    </div>
+                    <span class="exp-company">Ford Motor Private Limited</span>
+                    <ul class="exp-list">
+                        <li>Owned SG&A budgeting, forecasting, and variance analysis insights for finance leaders.</li>
+                        <li>Strengthened PO compliance and spending discipline across departments.</li>
                     </ul>
                 </div>
             </div>
@@ -298,24 +206,24 @@
                     <li><strong>CMA – ICWAI</strong> (2013, First Attempt)</li>
                     <li><strong>MBA – Finance</strong>, University of Madras (2016)</li>
                     <li><strong>B.Com</strong> – Vivekananda College, Chennai (2013)</li>
-                    <li><strong>FMVA</strong> – Financial Modeling & Valuation Analyst (In Progress – CFI)</li>
+                    <li><strong>FMVA</strong> – In Progress (CFI)</li>
                 </ul>
             </div>
         </section>
 
-        <section id="interests">
-            <h2 class="section-title">Executive Balance</h2>
+        <section id="personal">
+            <h2 class="section-title">Personal</h2>
             <div class="content-card">
                 <div class="interests-flex">
                     <div><span class="interest-icon">🧘</span><strong>Yoga Instructor</strong></div>
-                    <div><span class="interest-icon">🎶</span><strong>Flautist</strong></div>
+                    <div><span class="interest-icon">🎶</span><strong>Budding Flautist</strong></div>
                     <div><span class="interest-icon">🧠</span><strong>Music Therapist</strong></div>
                 </div>
             </div>
         </section>
 
         <footer>
-            <a href="mailto:Nareshsha13@gmail.com" class="contact-btn">Email Me</a>
+            <a href="mailto:Nareshsha13@gmail.com" class="contact-btn">Get In Touch</a>
             <div style="margin-top: 30px;">
                 <a href="https://www.linkedin.com/in/naresh-sha-j-r-633371b3" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 0.8rem; font-weight: 700;">LINKEDIN PROFILE →</a>
             </div>
