@@ -8,24 +8,25 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-       --primary: #64748b;   /* Professional Slate Grey */
-            --accent: #d4af37;    /* Executive Gold */
-            --glass: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
-            --text-main: #ffffff; /* Bright White Text */
-            --text-dim: #f1f5f9;  /* Soft Off-White Text */
-            --card-bg: rgba(0, 0, 0, 0.15); /* Slightly darker cards for depth */
-            --glow: rgba(0, 0, 0, 0.1);
+            --primary: #0d1b33; 
+            --accent: #d4af37;  
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --text-main: #f1f5f9;
+            --text-dim: #94a3b8;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --glow: rgba(212, 175, 55, 0.3);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         body { background-color: var(--primary); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
 
         /* --- Graphics & Background --- */
-     position: fixed;
+        .bg-graphics {
+            position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1;
-            background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+            background: radial-gradient(circle at 50% 0%, rgba(30, 58, 138, 0.2) 0%, transparent 70%);
         }
         .orb { position: absolute; width: 400px; height: 400px; background: var(--glow); filter: blur(120px); border-radius: 50%; opacity: 0.15; }
         .orb-1 { top: -100px; right: -100px; }
